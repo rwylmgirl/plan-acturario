@@ -51,7 +51,7 @@ function guardarProgreso() {
 }
 
 function renderMaterias() {
-  document.querySelectorAll('.grupo').forEach(div => div.innerHTML = "");
+  document.querySelectorAll('.grupo').forEach(div => (div.innerHTML = ""));
 
   materias.forEach(m => {
     const div = document.createElement("div");
@@ -80,15 +80,15 @@ function renderMaterias() {
   });
 }
 
-const selectorTema = document.getElementById('temaSelector');
-selectorTema.value = 'pastel';
+const selectorTema = document.getElementById("temaSelector");
+selectorTema.value = "pastel";
 
 function aplicarTema(tema) {
-  document.body.classList.remove('tema-pastel', 'tema-oscuro', 'tema-minimalista');
-  document.body.classList.add('tema-' + tema);
+  document.body.classList.remove("tema-pastel", "tema-oscuro", "tema-minimalista");
+  document.body.classList.add("tema-" + tema);
 }
 
-selectorTema.addEventListener('change', (e) => {
+selectorTema.addEventListener("change", (e) => {
   aplicarTema(e.target.value);
 });
 
