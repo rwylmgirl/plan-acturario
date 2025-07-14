@@ -1,22 +1,29 @@
+/* Temas */
+
 body {
   font-family: sans-serif;
-  background-color: #fff8f9;
   padding: 20px;
-  color: #cc6699;
+  margin: 0;
+  min-height: 100vh;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2 {
   text-align: center;
-  color: #cc6699; /* rosa suave */
+  margin: 0 0 15px 0;
+  transition: color 0.3s;
 }
 
+/* Tramos */
+
 .tramo {
-  border: 1px solid #f5c6d6; /* borde rosa claro */
+  border: 1px solid;
   border-radius: 12px;
   padding: 15px;
   margin: 20px auto;
   max-width: 1000px;
   background-color: #fff0f5;
+  transition: border-color 0.3s, background-color 0.3s;
 }
 
 .grupo {
@@ -25,31 +32,135 @@ h1, h2 {
   justify-content: center;
   gap: 10px;
   margin-top: 10px;
+  position: relative;
 }
+
+/* Materias */
 
 .materia {
   padding: 10px 15px;
-  border: 2px solid #f7dce5;
+  border: 2px solid;
   border-radius: 10px;
-  background-color: #fce4ec; /* rosa clarito */
-  color: #b0a0a0; /* letras grises suaves */
-  cursor: default;
-  transition: all 0.3s ease;
   min-width: 180px;
   text-align: center;
+  cursor: default;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  position: relative;
+  z-index: 1;
 }
 
-.materia.activa {
-  background-color: #f8bbd0; /* rosa más oscuro */
-  color: #ad1457; /* letras rosas intensas */
+/* Punteros para aprobadas no clickables */
+
+.materia.aprobada {
+  cursor: pointer;
+  text-decoration: line-through;
+}
+
+/* Tema Pastel */
+
+body.tema-pastel {
+  background-color: #fff8f9;
+  color: #cc6699;
+}
+
+body.tema-pastel h1,
+body.tema-pastel h2 {
+  color: #cc6699;
+}
+
+body.tema-pastel .tramo {
+  border-color: #f5c6d6;
+  background-color: #fff0f5;
+}
+
+body.tema-pastel .materia {
+  border-color: #f7dce5;
+  background-color: #fce4ec;
+  color: #b0a0a0;
+}
+
+body.tema-pastel .materia.activa {
+  background-color: #f8bbd0;
+  color: #ad1457;
   border-color: #f48fb1;
   cursor: pointer;
 }
 
-.materia.aprobada {
-  background-color: #ffd8b2; /* naranja pastel */
-  color: #d2691e; /* naranja más oscuro */
-  text-decoration: line-through;
+body.tema-pastel .materia.aprobada {
+  background-color: #ffd8b2;
+  color: #d2691e;
   border-color: #ffbb88;
-  cursor: default;
+}
+
+/* Tema Oscuro */
+
+body.tema-oscuro {
+  background-color: #1e1e2f;
+  color: #f4c2c2;
+}
+
+body.tema-oscuro h1,
+body.tema-oscuro h2 {
+  color: #f4c2c2;
+}
+
+body.tema-oscuro .tramo {
+  border-color: #8b5e5e;
+  background-color: #2e2c3c;
+}
+
+body.tema-oscuro .materia {
+  border-color: #a57676;
+  background-color: #3b3a4b;
+  color: #bba9a9;
+}
+
+body.tema-oscuro .materia.activa {
+  background-color: #924d70;
+  color: #f7c8d2;
+  border-color: #b36587;
+  cursor: pointer;
+}
+
+body.tema-oscuro .materia.aprobada {
+  background-color: #b88a50;
+  color: #6a3c0a;
+  border-color: #d4aa6e;
+}
+
+/* Tema Minimalista */
+
+body.tema-minimalista {
+  background-color: #fefefe;
+  color: #555555;
+}
+
+body.tema-minimalista h1,
+body.tema-minimalista h2 {
+  color: #555555;
+}
+
+body.tema-minimalista .tramo {
+  border-color: #dddddd;
+  background-color: #fafafa;
+}
+
+body.tema-minimalista .materia {
+  border-color: #cccccc;
+  background-color: #eeeeee;
+  color: #888888;
+}
+
+body.tema-minimalista .materia.activa {
+  background-color: #cccccc;
+  color: #444444;
+  border-color: #bbbbbb;
+  cursor: pointer;
+}
+
+body.tema-minimalista .materia.aprobada {
+  background-color: #f0d9c6;
+  color: #a0522d;
+  border-color: #d2b48c;
 }
