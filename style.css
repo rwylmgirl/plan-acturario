@@ -10,6 +10,7 @@ body {
   background-color: #fffafc;
   color: #555;
   transition: background-color 0.3s, color 0.3s;
+  color-scheme: light dark;
 }
 
 .contenedor {
@@ -103,12 +104,12 @@ select:focus {
 
 /* Materia aprobada */
 .materia.aprobada {
-  background-color: #fcbf88;
-  color: #b66d3f;
+  background-color: #f5a97f;
+  color: #8c4b17;
   text-decoration: line-through;
   cursor: pointer;
-  border-color: #e6a25d;
-  box-shadow: 0 2px 10px #f5a45caa;
+  border-color: #d97e4c;
+  box-shadow: 0 2px 10px #d97e4c88;
 }
 
 /* Tema Oscuro */
@@ -154,10 +155,10 @@ select:focus {
 }
 
 .tema-oscuro .materia.aprobada {
-  background-color: #fcbf88;
-  color: #b66d3f;
-  border-color: #e6a25d;
-  box-shadow: 0 2px 10px #f5a45caa;
+  background-color: #f5a97f;
+  color: #8c4b17;
+  border-color: #d97e4c;
+  box-shadow: 0 2px 10px #d97e4c88;
   text-decoration: line-through;
 }
 
@@ -203,5 +204,5 @@ select:focus {
 
 .tema-minimalista .materia.aprobada {
   text-decoration: line-through;
-  color: orange;
+  color: #d97742;
 }
