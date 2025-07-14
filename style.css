@@ -1,166 +1,107 @@
-/* Temas */
-
 body {
-  font-family: sans-serif;
-  padding: 20px;
-  margin: 0;
-  min-height: 100vh;
-  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 20px;
+  background-color: #fff;
+  transition: background-color 0.3s;
 }
 
-h1, h2 {
+h1 {
+  color: #d36fa0;
   text-align: center;
-  margin: 0 0 15px 0;
-  transition: color 0.3s;
 }
 
-/* Tramos */
+h2 {
+  color: #d36fa0;
+  margin-bottom: 10px;
+}
 
-.tramo {
-  border: 1px solid;
-  border-radius: 12px;
+.bloque {
+  border: 2px solid #f4a6c1;
+  border-radius: 15px;
   padding: 15px;
-  margin: 20px auto;
-  max-width: 1000px;
+  margin-bottom: 30px;
   background-color: #fff0f5;
-  transition: border-color 0.3s, background-color 0.3s;
 }
 
 .grupo {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   gap: 10px;
-  margin-top: 10px;
-  position: relative;
+  justify-content: flex-start;
 }
-
-/* Materias */
 
 .materia {
-  padding: 10px 15px;
-  border: 2px solid;
+  padding: 10px 14px;
   border-radius: 10px;
-  min-width: 180px;
-  text-align: center;
+  font-size: 14px;
+  background-color: #f8d9e5;
+  color: #999;
+  border: 1px solid #f0c0d0;
   cursor: default;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
-  position: relative;
-  z-index: 1;
+  transition: all 0.2s;
 }
 
-/* Punteros para aprobadas no clickables */
+/* Habilitada */
+.materia.activa {
+  background-color: #f292b9;
+  color: #b84d81;
+  cursor: pointer;
+  font-weight: bold;
+}
 
+/* Aprobada */
 .materia.aprobada {
-  cursor: pointer;
+  background-color: #fcbf88;
+  color: #b66d3f;
   text-decoration: line-through;
-}
-
-/* Tema Pastel */
-
-body.tema-pastel {
-  background-color: #fff8f9;
-  color: #cc6699;
-}
-
-body.tema-pastel h1,
-body.tema-pastel h2 {
-  color: #cc6699;
-}
-
-body.tema-pastel .tramo {
-  border-color: #f5c6d6;
-  background-color: #fff0f5;
-}
-
-body.tema-pastel .materia {
-  border-color: #f7dce5;
-  background-color: #fce4ec;
-  color: #b0a0a0;
-}
-
-body.tema-pastel .materia.activa {
-  background-color: #f8bbd0;
-  color: #ad1457;
-  border-color: #f48fb1;
   cursor: pointer;
 }
 
-body.tema-pastel .materia.aprobada {
-  background-color: #ffd8b2;
-  color: #d2691e;
-  border-color: #ffbb88;
+/* Temas */
+.tema-pastel {
+  background-color: #fffafc;
 }
 
-/* Tema Oscuro */
-
-body.tema-oscuro {
-  background-color: #1e1e2f;
-  color: #f4c2c2;
+.tema-oscuro {
+  background-color: #1e1e1e;
+  color: #eee;
 }
 
-body.tema-oscuro h1,
-body.tema-oscuro h2 {
-  color: #f4c2c2;
+.tema-oscuro .materia {
+  background-color: #333;
+  color: #aaa;
+  border-color: #444;
 }
 
-body.tema-oscuro .tramo {
-  border-color: #8b5e5e;
-  background-color: #2e2c3c;
+.tema-oscuro .materia.activa {
+  background-color: #555;
+  color: #fff;
 }
 
-body.tema-oscuro .materia {
-  border-color: #a57676;
-  background-color: #3b3a4b;
-  color: #bba9a9;
+.tema-oscuro .materia.aprobada {
+  background-color: #996;
+  color: #332;
 }
 
-body.tema-oscuro .materia.activa {
-  background-color: #924d70;
-  color: #f7c8d2;
-  border-color: #b36587;
-  cursor: pointer;
+.tema-minimalista {
+  background-color: white;
+  color: black;
 }
 
-body.tema-oscuro .materia.aprobada {
-  background-color: #b88a50;
-  color: #6a3c0a;
-  border-color: #d4aa6e;
+.tema-minimalista .materia {
+  background-color: white;
+  border: 1px solid #ccc;
+  color: #999;
 }
 
-/* Tema Minimalista */
-
-body.tema-minimalista {
-  background-color: #fefefe;
-  color: #555555;
+.tema-minimalista .materia.activa {
+  color: black;
+  font-weight: bold;
 }
 
-body.tema-minimalista h1,
-body.tema-minimalista h2 {
-  color: #555555;
+.tema-minimalista .materia.aprobada {
+  text-decoration: line-through;
+  color: orange;
 }
 
-body.tema-minimalista .tramo {
-  border-color: #dddddd;
-  background-color: #fafafa;
-}
-
-body.tema-minimalista .materia {
-  border-color: #cccccc;
-  background-color: #eeeeee;
-  color: #888888;
-}
-
-body.tema-minimalista .materia.activa {
-  background-color: #cccccc;
-  color: #444444;
-  border-color: #bbbbbb;
-  cursor: pointer;
-}
-
-body.tema-minimalista .materia.aprobada {
-  background-color: #f0d9c6;
-  color: #a0522d;
-  border-color: #d2b48c;
-}
