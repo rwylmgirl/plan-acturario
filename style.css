@@ -1,13 +1,21 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  margin: 20px;
-  background-color: #fff;
+  margin: 0;
+  padding: 0;
+  background-color: #fffafc;
   transition: background-color 0.3s;
+}
+
+.contenedor {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
 }
 
 h1 {
   color: #d36fa0;
-  text-align: center;
+  margin-bottom: 20px;
 }
 
 h2 {
@@ -15,11 +23,23 @@ h2 {
   margin-bottom: 10px;
 }
 
+label, select {
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
 .bloque {
   border: 2px solid #f4a6c1;
   border-radius: 15px;
-  padding: 15px;
-  margin-bottom: 30px;
+  padding: 20px;
+  margin: 30px auto;
   background-color: #fff0f5;
 }
 
@@ -27,7 +47,7 @@ h2 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .materia {
@@ -59,10 +79,6 @@ h2 {
 }
 
 /* Temas */
-.tema-pastel {
-  background-color: #fffafc;
-}
-
 .tema-oscuro {
   background-color: #1e1e1e;
   color: #eee;
@@ -104,4 +120,3 @@ h2 {
   text-decoration: line-through;
   color: orange;
 }
-
