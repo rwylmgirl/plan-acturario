@@ -37,20 +37,23 @@ const materias = [
 
 let aprobadas = new Set();
 
-// LocalStorage: cargar
+// Cargar materias aprobadas desde localStorage
 const guardado = localStorage.getItem('aprobadas');
 if (guardado) {
   aprobadas = new Set(JSON.parse(guardado));
 }
 
+// Verifica si una materia puede habilitarse
 function puedeHabilitar(materia) {
   return materia.correlativas.every(id => aprobadas.has(id));
 }
 
+// Guarda en localStorage
 function guardarProgreso() {
   localStorage.setItem('aprobadas', JSON.stringify([...aprobadas]));
 }
 
+// Renderiza todas las materias y aplica estilos según estado
 function renderMaterias() {
   document.querySelectorAll('.grupo').forEach(div => div.innerHTML = "");
 
@@ -81,8 +84,7 @@ function renderMaterias() {
   });
 }
 
-// Tema selector
-
+// Selector de temas
 const selectorTema = document.getElementById('temaSelector');
 selectorTema.value = 'pastel';
 
