@@ -64,14 +64,14 @@ function renderMaterias() {
       div.addEventListener("click", () => {
         aprobadas.delete(m.id);
         guardarProgreso();
-        renderMateriasConFlechas();
+        renderMaterias();
       });
     } else if (puedeHabilitar(m)) {
       div.classList.add("activa");
       div.addEventListener("click", () => {
         aprobadas.add(m.id);
         guardarProgreso();
-        renderMateriasConFlechas();
+        renderMaterias();
       });
     }
 
@@ -79,70 +79,9 @@ function renderMaterias() {
     const grupoDiv = document.getElementById(m.grupo);
     grupoDiv.appendChild(div);
   });
-
-  dibujarFlechas();
 }
 
-function dibujarFlechas() {
-  const svg = document.getElementById('flechasSVG');
-  svg.innerHTML = ''; // Limpiar
-
-  materias.forEach(m => {
-    const origen = document.querySelector(`.materia[data-id="${m.id}"]`);
-    if (!origen) return;
-
-    m.correlativas.forEach(corr => {
-      const destino = document.querySelector(`.materia[data-id="${corr}"]`);
-      if (!destino) return;
-
-      const r1 = origen.getBoundingClientRect();
-      const r2 = destino.getBoundingClientRect();
-
-      const x1 = r2.left + r2.width / 2;
-      const y1 = r2.top + r2.height / 2;
-      const x2 = r1.left + r1.width / 2;
-      const y2 = r1.top + r1.height / 2;
-
-      const linea = document.createElementNS("http://www.w3.org/2000/svg", "line");
-      linea.setAttribute("x1", x1);
-      linea.setAttribute("y1", y1);
-      linea.setAttribute("x2", x2);
-      linea.setAttribute("y2", y2);
-      linea.setAttribute("stroke", "#cc6699");
-      linea.setAttribute("stroke-width", "2");
-      linea.setAttribute("marker-end", "url(#flecha)");
-
-      svg.appendChild(linea);
-    });
-  });
-}
-
-function setupSVGMarkers() {
-  const svg = document.getElementById('flechasSVG');
-  const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
-  const marker = document.createElementNS("http://www.w3.org/2000/svg", "marker");
-  marker.setAttribute("id", "flecha");
-  marker.setAttribute("markerWidth", "10");
-  marker.setAttribute("markerHeight", "7");
-  marker.setAttribute("refX", "0");
-  marker.setAttribute("refY", "3.5");
-  marker.setAttribute("orient", "auto");
-  marker.setAttribute("fill", "#cc6699");
-
-  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-  path.setAttribute("d", "M0,0 L0,7 L10,3.5 z");
-
-  marker.appendChild(path);
-  defs.appendChild(marker);
-  svg.appendChild(defs);
-}
-
-function renderMateriasConFlechas() {
-  renderMaterias();
-  setTimeout(dibujarFlechas, 100);
-}
-
-// Cambiar tema
+// Tema selector
 
 const selectorTema = document.getElementById('temaSelector');
 selectorTema.value = 'pastel';
@@ -157,7 +96,5 @@ selectorTema.addEventListener('change', (e) => {
 });
 
 // Inicializar
-
-setupSVGMarkers();
 aplicarTema(selectorTema.value);
-renderMateriasConFlechas();
+renderMaterias();
